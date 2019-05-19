@@ -1,0 +1,52 @@
+# Pycharm
+.idea/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+develop-eggs/
+eggs/
+.eggs/
+*.egg-info/
+*.egg
+
+# Django stuff:
+*.log
+*.pot
+local_settings.py
+*.env
+staticfiles
+db.sqlite3
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Sphinx documentation
+docs/_build/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+dump.rdb
+
+# Pytest Stuff
+htmlcov/
+\.coverage
+
+env
+
+
+coverage\.xml
+
+media/
+
+assets/
