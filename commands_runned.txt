@@ -3,3 +3,14 @@
 > Create docker-compose.yml file
 docker-compose build
 docker-compose run app sh -c "django-admin.py startproject app ."
+
+
+# When running tests
+docker-compose run app python3 manage.py test
+
+#Remember rebuild the container each time you change the requirements
+docker-compose build
+
+
+#Running linting
+docker-compose run app sh -c "python3 manage.py test && flake8"
