@@ -20,7 +20,7 @@ class ModelTests(TestCase):
 
 
     def test_new_user_email_normalized(self):
-        """Test that the email for a new user is normalized (reduced to lower case)"""
+        """Test that the email for a new user is normalized (domain reduced to lower case)"""
         email = "liOnelL@gmail.com"
         user = get_user_model().objects.create_user(email, "test123")
 
