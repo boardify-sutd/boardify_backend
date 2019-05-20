@@ -4,7 +4,7 @@ from django.shortcuts import render
 from .serializers import UserSerializer
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
-from rest_framework import generics
+from rest_framework import generics, authentication, permissions
 
 from .serializers import UserSerializer, AuthTokenSerializer
 
@@ -17,7 +17,16 @@ class CreateTokenView(ObtainAuthToken):
     serializer_class = AuthTokenSerializer
     renderer_classes = api_settings.DEFAULT_RENDERER_CLASSES
 
+class ManageUserView(generics.RetrieveUpdateAPIView):
+    """Manage the authenticated user"""
+    serializer_class = UserSerializer
+    authentication_classes = (authentication.TokenAuthentication,)
+    permissions_classes = (permissions.IsAuthenticated,)
 
+    def get_object(self):
+        """Retrieve and return authenticated user"""
+
+        return self.request.user
 
 
 
