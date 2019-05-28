@@ -62,6 +62,21 @@ class ModelTests(TestCase):
         self.assertEqual(module.name, "Physics")
 
 
+    def test_location_str(self):
+        """Test the creation of locations"""
+
+        location = models.Location.objects.create(
+            code="2.505",
+            name="Lecture Theatre 3"
+
+        )
+
+        self.assertEqual(location.code, "2.505")
+        self.assertEqual(location.name, "Lecture Theatre 3")
+
+
+
+
 
 
 
