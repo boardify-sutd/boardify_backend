@@ -34,7 +34,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     """Custom user model that supports using email instead of username"""
 
     email = models.EmailField(max_length=255, unique=True)
-    name = models.CharField(max_length=255)
+    username = models.CharField(max_length=255)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
@@ -54,6 +54,20 @@ class Module(models.Model):
     def __str__(self):
         return self.name
 
+
+class Location(models.Model):
+    """Location model that every board will be tagged to based on where the lesson was held"""
+
+    code = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+
+
+    def __str__(self):
+        return self.code
+
+
+    def getName(self):
+        return self.name
 
 
 

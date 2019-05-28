@@ -5,7 +5,7 @@ from core import models
 
 class UserAdmin(BaseUserAdmin):
     ordering = ['id']
-    list_display = ['email', 'name']
+    list_display = ['email', 'username']
 
 
 admin.site.register(models.User, UserAdmin)
