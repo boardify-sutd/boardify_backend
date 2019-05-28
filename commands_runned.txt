@@ -27,3 +27,11 @@ docker-compose run --rm app sh -c "python3 manage.py test"
 
 # To get started
 docker-compose up
+
+
+
+docker-compose run app sh -c "python3 manage.py shell"
+
+Within PYTHON > from core.models import *
+
+docker-compose run app sh -c "python3 manage.py makemigrations core"
