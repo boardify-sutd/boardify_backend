@@ -75,6 +75,16 @@ class ModelTests(TestCase):
         self.assertEqual(location.name, "Lecture Theatre 3")
 
 
+    def test_lecturer_str(self):
+        """Test the creation of lectuer"""
+
+        lecturer = models.Lecturer.objects.create(
+            user=sample_user(),
+            name="David Yeow"
+        )
+
+        self.assertEqual(lecturer.name, "David Yeow")
+
 
 
 
