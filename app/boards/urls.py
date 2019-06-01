@@ -4,6 +4,10 @@ from boards import views
 
 router = DefaultRouter()
 router.register('modules', views.ModuleViewSet)
+router.register('locations', views.LocationViewSet)
+router.register('lessons', views.LessonViewSet)
+router.register('whiteboards', views.BoardViewSet)
+router.register('lecturers', views.LecturerViewSet)
 
 app_name = 'boards'
 
@@ -12,3 +16,4 @@ app_name = 'boards'
 urlpatterns = [
     path('', include(router.urls))
 ]
+

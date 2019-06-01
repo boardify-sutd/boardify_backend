@@ -4,7 +4,7 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
-from core.models import Module
+from core.models import *
 from boards import serializers
 
 class ModuleViewSet(viewsets.GenericViewSet,
@@ -24,3 +24,51 @@ class ModuleViewSet(viewsets.GenericViewSet,
     def perform_create(self, serializer):
         """Create a new tag"""
         serializer.save(user=self.request.user)
+
+class LocationViewSet(viewsets.ReadOnlyModelViewSet,
+                    mixins.ListModelMixin,
+                    mixins.CreateModelMixin):
+
+    """Manage Location in databsase"""
+    queryset = Location.objects.all()
+    serializer_class = serializers.LocationSerializer
+
+    def get_queryset(self):
+        """Return list of locations"""
+        return self.queryset
+
+
+class LessonViewSet(viewsets.ReadOnlyModelViewSet,
+                    mixins.ListModelMixin,
+                    mixins.CreateModelMixin):
+    queryset = Lesson.objects.all()
+    serializer_class = serializers.LessonSerializer
+
+    def get_queryset(self):
+        """Return list of lessons"""
+        return self.queryset
+
+
+class LecturerViewSet(viewsets.ReadOnlyModelViewSet,
+                    mixins.ListModelMixin,
+                    mixins.CreateModelMixin):
+    queryset = Lecturer.objects.all()
+    serializer_class = serializers.Lecturer
+
+    # def get_queryset(self):
+    #     """Return list of lessons"""
+    #     return self.queryset
+
+
+class BoardViewSet(viewsets.GenericViewSet,
+                   mixins.ListModelMixin,
+                   mixins.CreateModelMixin):
+
+    queryset = Board.objects.all()
+    serializer_class = serializers.BoardSerializer
+
+
+
+
+
+
