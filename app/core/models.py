@@ -87,7 +87,10 @@ class Pillar(models.Model):
     name = models.CharField(max_length=50)
 
 class LessonType(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=30, default = None)
+
+    def __str__(self):
+        return self.name
 
 
 class CohortClass(models.Model):
@@ -104,7 +107,7 @@ class Lesson(models.Model):
 
     # Lecture/ Lab/ Cohort
     type = models.ForeignKey(LessonType, on_delete=models.PROTECT)
-    over = models.BooleanField(default=False)
+    # over = models.BooleanField(default=False)
     module = models.ForeignKey(Module, on_delete=models.PROTECT)
     location = models.ForeignKey(Location, on_delete=models.PROTECT)
     lesson_time = models.DateTimeField(default=None)
@@ -142,7 +145,7 @@ class Comment(models.Model):
     board = models.ForeignKey(Board, on_delete=models.CASCADE)
 
     def __str__(self):
-        return comment_text
+        return self.comment_text
 
 
 
