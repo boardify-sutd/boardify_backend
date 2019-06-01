@@ -19,6 +19,7 @@ services:
       - DB_NAME=app
       - DB_USER=postgres
       - DB_PASS=supersecretpassword
+      - PORT=8000
     depends_on:
       - db
 

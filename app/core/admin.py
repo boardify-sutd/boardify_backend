@@ -5,7 +5,12 @@ from core import models
 
 class UserAdmin(BaseUserAdmin):
     ordering = ['id']
-    list_display = ['email', 'name']
+    list_display = ['email', 'username']
 
 
 admin.site.register(models.User, UserAdmin)
+admin.site.register(models.Module)
+admin.site.register(models.Lesson)
+admin.site.register(models.Lecturer)
+admin.site.register(models.Board)
+admin.site.register(models.Location)

@@ -1,0 +1,2 @@
+cursor "_django_curs_139755636272008_3" does not exist
+docker-compose run app sh -c "python3 manage.py makemigrations core"
