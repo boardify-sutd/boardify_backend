@@ -1,11 +1,16 @@
-from django.shortcuts import render
+from django.http import HttpResponse
 from rest_framework import viewsets, mixins
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
+from django.shortcuts import render
+
 # Create your views here.
 from core.models import *
 from boards import serializers
+
+def process_board(request):
+    return HttpResponse("process_board")
 
 class ModuleViewSet(viewsets.GenericViewSet,
                     mixins.ListModelMixin,

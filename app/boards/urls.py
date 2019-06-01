@@ -14,6 +14,7 @@ app_name = 'boards'
 # print(router.urls)
 
 urlpatterns = [
+    path('submit_board/', views.process_board),
     path('', include(router.urls))
 ]
 
