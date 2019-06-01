@@ -16,7 +16,7 @@ class LocationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Location
-        fields = ('code', 'name')
+        fields = ('code', 'name', 'lecturer')
 
 class LessonSerializer(serializers.ModelSerializer):
 
@@ -30,8 +30,10 @@ class LecturerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lecturer
         fields = ('name', 'user', 'lessons')
+        # fields = ('name')
 
 class BoardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Board
         fields = ('image_url', 'lesson', 'text_on_board', 'time_taken')
+
