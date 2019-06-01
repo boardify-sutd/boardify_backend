@@ -54,12 +54,12 @@ class LessonViewSet(viewsets.ReadOnlyModelViewSet,
         return self.queryset
 
 
-class LecturerViewSet(viewsets.ReadOnlyModelViewSet,
+class LecturerViewSet(viewsets.GenericViewSet,
                     mixins.ListModelMixin,
                     mixins.CreateModelMixin):
     queryset = Lecturer.objects.all()
-    serializer_class = serializers.Lecturer
-
+    serializer_class = serializers.LecturerSerializer
+    #
     # def get_queryset(self):
     #     """Return list of lessons"""
     #     return self.queryset
