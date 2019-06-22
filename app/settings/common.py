@@ -21,10 +21,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '=04x6w_h@g59r9uto!g(56$4-d5i!iwh%a@(un9x@#b(x8+442'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = ["lionellloh.localhost.run", "localhost", "localhost.run", "lionellloh0.localhost.run"]
+
+ALLOWED_HOSTS = ['0.0.0.0', "lionellloh.localhost.run", "localhost", "localhost.run", "lionellloh0.localhost.run"]
 
 
 # Application definition
